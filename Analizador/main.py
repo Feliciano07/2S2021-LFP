@@ -13,7 +13,8 @@ def main():
            entrada = Leer_Archivos()
         elif opcion == 2:
             lexico = Analizador()
-            lexico.analisis(entrada)
+            salida  = lexico.analisis(entrada)
+            print(salida)
         elif opcion ==3:
             print("Terminando el programa...")
         opcion = Menu();
