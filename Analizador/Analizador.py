@@ -8,7 +8,7 @@ class Analizador:
     estado = 0
     #metodo que se ejecuta al instanciar una clase, constructor. self referencia a mi objeto
     def __init__(self):
-        print('Nuevo objeto')
+        print(' ')
     
     def analisis(self, entrada):
         #Para saber que llevo en ejecucion
@@ -42,7 +42,7 @@ class Analizador:
                 elif actual == '=' or actual == ";" or actual == "<" or actual == ">" or actual == "," or actual == "[" or actual == ']' or actual == '{' or actual == "}":
                     self.estado = 0
                     continue
-                elif actual == ' ' or actual =="\n" or actual == "\r":
+                elif actual == ' ' or actual =="\n" or actual == "\r" or actual =='\t':
                     self.estado = 0
                     continue
                 else:
