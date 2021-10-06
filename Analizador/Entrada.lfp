@@ -1,5 +1,5 @@
 REPORTE1 = {
-    Nombre = "Notas";                     Valores = [45,78,12,5,9,78];
-    
-                Reporte<ASC,DESC>
+    Nombre = "Notas";                     
+    Valores = [45,78,12,5,9,78];
+    Reporte<ASC,DESC>
 }

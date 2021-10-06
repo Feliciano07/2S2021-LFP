@@ -1,7 +1,7 @@
 from Token import Token
 class Analizador:
     #Guardo lo que llevo reconociendo
-    lexema = ''
+    lexema = ''  
     #Lista de tokens 
     tokens = []
     #estado, para saber donde ando
