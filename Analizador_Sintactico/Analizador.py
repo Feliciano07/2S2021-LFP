@@ -161,6 +161,23 @@ class Analyzer():
                         self.AddToken(TypeToken.COLOR.name)
                     else:
                         self.AddToken(TypeToken.DESCONOCIDO.name)
+                    if self.IsSymbol(actual):
+                        self.lexeme += actual
+                        self.column += 1                    
+                        if actual == '=':
+                            self.AddToken(TypeToken.IGUAL.name)
+                        elif actual == '[':
+                            self.AddToken(TypeToken.CORCHETE_IZQUIERDA.name)
+                        elif actual == ']':
+                            self.AddToken(TypeToken.CORCHETE_DERECHA.name)
+                        elif actual == '{':
+                            self.AddToken(TypeToken.LLAVE_IZQUIERDA.name)
+                        elif actual == '}':
+                            self.AddToken(TypeToken.LLAVE_DERECHA.name)
+                        elif actual == ',':
+                            self.AddToken(TypeToken.COMA.name)
+                        elif actual == ';':
+                            self.AddToken(TypeToken.PUNTO_Y_COMA.name) 
 
             elif self.state == 6:
                 if actual == '@':

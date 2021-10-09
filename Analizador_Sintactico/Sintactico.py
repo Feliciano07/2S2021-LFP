@@ -60,8 +60,8 @@ class Sintactico:
         self.Match(TypeToken.IGUAL.name)
         self.Match(TypeToken.LLAVE_IZQUIERDA.name)
         self.Bloque_Celdas()
-        # self.Match(TypeToken.LLAVE_DERECHA.name)
-        # self.Match(TypeToken.PUNTO_Y_COMA.name)
+        self.Match(TypeToken.LLAVE_DERECHA.name)
+        self.Match(TypeToken.PUNTO_Y_COMA.name)
 
 
     def Bloque_Celdas(self):
@@ -78,7 +78,7 @@ class Sintactico:
         self.Boleano()
         self.Match(TypeToken.COMA.name)
         self.Match(TypeToken.COLOR.name)
-        self.Match(TypeToken.CORCHETE_IZQUIERDA.name)
+        self.Match(TypeToken.CORCHETE_DERECHA.name)
 
     def Boleano(self):
         self.Match(TypeToken.BOOLEANO.name)
