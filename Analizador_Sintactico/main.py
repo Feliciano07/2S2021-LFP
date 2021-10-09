@@ -18,7 +18,6 @@ def main():
             lexico.printErrors()
         elif opcion ==3:
             sintactico = Sintactico(lexico.tokens)
-            print('Analisis Sintactico')
         elif opcion == 4:
             print('Ver Errores Sintactico')
         elif opcion == 0 :
