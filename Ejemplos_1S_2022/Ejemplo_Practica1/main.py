@@ -15,7 +15,8 @@ def main():
             print(txt_intrucciones)
         elif opcion == 3:
             lexico_intrucciones = LexicoInstrucciones(txt_intrucciones)
-            lexico_intrucciones.printTokens()
+            #lexico_intrucciones.printTokens()
+            lexico_intrucciones.GuardarDatos()
         elif opcion ==4:
             print("Terminando el programa...")
         opcion = Menu();

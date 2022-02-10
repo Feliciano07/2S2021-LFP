@@ -6,6 +6,9 @@ class LexicoInstrucciones():
     
     tipo = TypeToken.DESCONOCIDO
 
+    nombre_grafica = ''
+    tipo_grafica = ''
+
     def __init__(self,entrada):
         self.estado = 0
         self.lexema = ''
@@ -21,6 +24,10 @@ class LexicoInstrucciones():
 
                 if actual.isalpha():
                     self.estado = 1
+                    self.lexema += actual
+                    continue
+                elif actual.isdigit():
+                    self.estado = 4
                     self.lexema += actual
                     continue
                 elif actual == '"':
@@ -63,9 +70,12 @@ class LexicoInstrucciones():
                     # Verificar si esta dentro de las palabras que solicitan
                     if self.Reservada():
                         self.AgregarToken(self.tipo.name)
+                        i -= 1
+                        continue
                     else:
                         self.AgregarToken(TypeToken.LETRAS.name)
                         i -= 1
+                        continue
             #Estado para manejar cadenas
             if self.estado == 2:
                 if actual != '"':
@@ -76,6 +86,16 @@ class LexicoInstrucciones():
                     self.estado = 3
                     self.lexema += actual
                     self.AgregarToken(TypeToken.CADENA.name)
+            if self.estado == 4:
+                if actual.isdigit():
+                    self.estado = 4
+                    self.lexema += actual
+                    continue
+                else:
+                    self.AgregarToken(TypeToken.NUMERO.name)
+                    i -= 1
+                    continue
+
 
 
     def AgregarToken(self, tipo):
@@ -98,3 +118,14 @@ class LexicoInstrucciones():
     def printTokens(self):
         for token in self.tokens:
             print(token.lexema + " -> Tipo: " + str(token.type))
+
+    
+
+    def GuardarDatos(self):
+        longitud = len(self.tokens)
+        for i in range(longitud):
+            if self.tokens[i].type == TypeToken.NOMBRE.name:
+                i = i + 1
+                self.nombre_grafica = self.tokens[i].lexema
+        print(self.nombre_grafica)
+

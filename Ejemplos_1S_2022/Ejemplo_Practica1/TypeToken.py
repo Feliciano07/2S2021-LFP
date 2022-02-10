@@ -14,4 +14,3 @@ class TypeToken(Enum):
     NOMBRE = 12
     GRAFICA = 13
     LETRAS = 14
-    
