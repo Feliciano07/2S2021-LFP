@@ -15,7 +15,7 @@ class Analizador:
     generar = False
 
     #Esto es solo para manejar los tipos
-    tipos = Token("lexema", -1, -1, -1)
+    
 
     def scanner(self,entrada):
         self.estado = 1
@@ -24,6 +24,7 @@ class Analizador:
         self.fila = 1
         self.columna = 1
         self.generar = True
+        tipos = Token("lexema", -1, -1, -1)
 
         entrada = entrada + '#'
         actual = ''
@@ -48,15 +49,19 @@ class Analizador:
                     self.lexema += actual
                 elif actual == '=':
                     self.columna +=1
+                    self.lexema += actual
                     self.AgregarToken(tipos.IGUAL)
                 elif actual == '{':
                     self.columna +=1
+                    self.lexema += actual
                     self.AgregarToken(tipos.LLAVE_D)
                 elif actual == '}':
                     self.columna += 1
+                    self.lexema += actual
                     self.AgregarToken(tipos.LLAVE_I)
                 elif actual == ',':
                     self.columna +=1
+                    self.lexema += actual
                     self.AgregarToken(tipos.COMA)
                 elif actual == ' ':
                     self.columna +=1
@@ -158,12 +163,14 @@ class Analizador:
         return valor
 
     def Imprimir(self):
+        tipos = Token("lexema", -1, -1, -1)
         for x in self.tokens:
             if x.tipo != tipos.DESCONOCIDO:
                 print(x.getLexema()," --> ",x.getTipo(),' --> ',x.getFila(), ' --> ',x.getColumna())
     
 
     def ImprimirErrores(self):
+        tipos = Token("lexema", -1, -1, -1)
         for x in self.tokens:
             if x.tipo == tipos.DESCONOCIDO:
                 print(x.getLexema()," --> ",x.getFila(), ' --> ',x.getColumna(),'--> Error Lexico')

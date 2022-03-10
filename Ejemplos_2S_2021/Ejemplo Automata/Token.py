@@ -49,5 +49,5 @@ class Token():
             return "Llave derecha"
         elif self.tipo == self.COMA:
             return "Coma"
-        elif self.tipo == self.TRUE or self.tipo == self.FALSE:
+        elif self.tipo == self.BOOLEANOS:
             return "Booleano"

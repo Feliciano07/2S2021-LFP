@@ -1,2 +1,2 @@
-Variables = {persona1, apellido2, variable1}
-Valores = {45,"Chajon del Cid", tRue}
+Variables = { persona1, apellido2, variable1 } %
+Valores = { 45, "Chajon del Cid" , tRue}

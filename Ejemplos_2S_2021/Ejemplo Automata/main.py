@@ -2,7 +2,6 @@
 from Analizador import Analizador
 from Helpers import Menu, Leer_Archivos
 
-print("Mi analizador")
 
 
 def main():
@@ -16,8 +15,10 @@ def main():
             lexico.scanner(entrada)
         elif opcion ==3:
             print("Lista de tokens")
+            lexico.Imprimir()
         elif opcion == 4:
             print('Lista de errores')
+            lexico.ImprimirErrores()
         elif opcion == 0 :
             print('Terminando el programa...')
         opcion = Menu();
