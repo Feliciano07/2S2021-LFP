@@ -1,0 +1,31 @@
+from enum import Enum
+
+class TypeToken(Enum):
+    PALABRA_RESERVADA = 1
+    CADENA =2
+    NUMERO = 3
+    ID = 4
+    IGUAL = 5
+    CORCHETE_DERECHA = 6
+    CORCHETE_IZQUIERDA = 7
+    LLAVE_DERECHA = 8
+    LLAVE_IZQUIERDA = 9
+    COMA = 10
+    PUNTO_Y_COMA = 11
+    BOOLEANO = 12
+    COLOR = 13
+    SEPARADOR = 14
+    DESCONOCIDO = 15
+    TITULO = 16
+    ANCHO =17
+    ALTO = 18
+    FILA = 19
+    COLUMNA = 20
+    CELDAS = 21
+    MIRRORX = 22
+    MIRRORY = 23
+    DOUBLEMIRROR = 24
+    TK_TRUE = 25
+    TK_FALSE = 26
+    FILTROS = 27
+    ULTIMO = 28

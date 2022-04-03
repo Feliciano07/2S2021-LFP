@@ -1,0 +1,11 @@
+Tituto = "POkebola";
+ancho = 300;
+Alto = 300;
+Filas = 12;
+Columnas = 12;
+CELDAS = {
+	[4,0,TRUE,#000000]
+    [4,0,TRUE,#000000]
+};
+
+filtros = Mirrorx;
