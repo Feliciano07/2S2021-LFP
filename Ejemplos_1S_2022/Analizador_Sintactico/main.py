@@ -17,8 +17,8 @@ def main():
         elif opcion == 2:
             lexico.printErrors()
         elif opcion ==3:
-            #sintactico = Sintactico(lexico.tokens)
-            print("analisis sintactico")
+            sintactico = Sintactico(lexico.tokens)
+            #print("analisis sintactico")
         elif opcion == 4:
             print('Ver Errores Sintactico')
         elif opcion == 0 :

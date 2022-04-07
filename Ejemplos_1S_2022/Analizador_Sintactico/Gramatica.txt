@@ -1,0 +1,56 @@
+<Inicio>::= <Titulo> <Rpetir>
+           |<Ancho> <Rpetir>
+           |<Alto> <Rpetir>
+           |<Fila> <Rpetir>
+           |<Columna> <Rpetir>
+           |<Celdas> <Rpetir>
+           |<Bloque_filtros> <Rpetir>
+
+
+<Rpetir>::= <Titulo> <Rpetir>
+           |<Ancho> <Rpetir>
+           |<Alto> <Rpetir>
+           |<Fila> <Rpetir>
+           |<Columna> <Rpetir>
+           |<Celdas> <Rpetir>
+           |<Bloque_filtros> <Rpetir>
+           |Epsilon
+
+
+
+
+
+<Titulo>::= tk_titulo tk_igual tk_cadena tk_puntoComa
+<Ancho>::= tk_ancho tk_igual tk_numero tk_puntoComa
+<Alto>::= tk_alto tk_igual tk_numero tk_punto
+<Fila>::= Tk_fila tk_igual tk_numero tk_puntoComa
+<Columna>::= Tk_columna tk_igual tk_numero tk_puntoComa
+
+
+
+<Celdas>::= tk_celda tk_igual tk_llaveA  <Bloque_Celdas> tk_llaveC tk_puntoComa
+
+
+
+<Bloque_Celdas>::= <Cuerpo_celda> <Bloque_Celdas>
+                   |<Cuerpo_celda>
+
+
+
+<Cuerpo_celda>::= tk_corA tk_numero tk_coma tk_numero tk_coma <Booleano> tk_coma t_color tk_corC
+
+
+
+<Booleano>::= tk_true
+            | tk_false
+
+
+<Bloque_filtros>::= Tk_filtros Tk_igual <Lista_Filtros> tk_puntoComa
+
+<Lista_Filtros>::= <FILTROS> Tk_Coma <Lista_Filtros>
+                  |<FILTROS>
+
+
+<FILTROS>::= Tk_mirrX
+            |Tk_mirrY
+            |Tk_Doble
